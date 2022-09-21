@@ -1,0 +1,6 @@
+---
+name: httpd
+path: /var/www/html/index.html
+state: present
+content: " nothing is permanent except change"
+# vars file for apache

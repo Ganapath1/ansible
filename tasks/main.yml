@@ -1,0 +1,19 @@
+---
+- name: installing software
+  yum:
+    name: "{{name}}"
+    state: "{{state}}"
+- name: creating index file
+  copy:
+    content: "{{content}}"
+    dest: "{{path}}"
+- name: crating template
+  template:
+    src: devops.html.j2
+    dest: /var/www/index.html
+- name: starting the service
+  service:
+    name: "{{name}}"
+    state: restarted
+
+# tasks file for apache
